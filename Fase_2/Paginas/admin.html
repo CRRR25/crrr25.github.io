@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin </title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.html">
+                <div class="sidebar-brand-icon ">
+                    <img src="../../img/login.png" width="66%" alt="">
+                </div>
+                <div class="sidebar-brand-text mx-3">Admin</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="admin.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Admin Options
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Admin</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="https://dreampuf.github.io/GraphvizOnline/">Reportes</a>
+                        <a class="collapse-item" href="admin.html">Rgistrar</a>
+                    </div>
+                </div>
+            </li>
+
+           
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content" style="background-color: #d1ffff">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                                <img class="img-profile rounded-circle"
+                                    src="../../img/login.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800" style="color: #01A5A1;" >Carga De Archivos</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                            <div class="card shadow mb-4 border-bottom-info" style="width: 100%">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-info">Archivo</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <div class="input-group mb-3">
+                                            <input type="file" class="form-control" id="archivo_entrada">
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                         <textarea class="form-control" placeholder="Texto del archivo" id="masiva" style="height: 200px"></textarea>
+                                         <hr>
+                                         <a type="submit" onclick="carga_masiva_inOrden()" class="btn btn-info btn-user ">
+                                            Cargar InOrdern
+                                        </a>
+                                        <a type="submit" onclick="carga_masiva_preorden()" class="btn btn-info btn-user ">
+                                          Cargar PreOrden
+                                      </a>
+                                      <a type="submit" onclick="carga_masiva_postOrden()" class="btn btn-info btn-user ">
+                                        Cargar PostOrden
+                                    </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+
+                  <!-- Page Heading -->
+                  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                      <h1 class="h3 mb-0 text-gray-800" style="color: #01A5A1;" ></h1>
+                  </div>
+
+                  <!-- Content Row -->
+                  <div class="row">
+                    <div>
+                        <input type="file" id="input" multiple />
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="busqueda()">Buscar Carnet</button>
+                        <input type="text" id="valor" class="form-control" placeholder="Ej. 9112246" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <div id="tabla_hash">
+
+                        </div>
+                    </div>
+                  </div>
+      
+              </div>  
+              
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800" style="color: #01A5A1;" ></h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                            <div class="card shadow mb-4 border-bottom-info" style="width: 100%">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-info">Graficas</h6>
+                                </div>
+                                <div class="card-body" id="graficas">
+                                    
+                                    <iframe id='graph' src="https://dreampuf.github.io/GraphvizOnline/#" height="700px" style="width: 100%"></iframe>
+                                    
+                                </div>
+                            </div>
+                    </div>
+        
+                </div>
+            </div>
+
+            
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="footer" style="background-color: #d1ffff">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <p style="color: #01A5A1;">© 2023 Copyright: Carlos Rangel, 9112246</p>
+                    </div>
+                </div>
+
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="../../index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <script src="js/avl.js"></script>
+    <script src="js/abb.js"></script>
+    <script src="js/arbolb.js"></script>   
+    <script src="js/grafo.js"></script>
+    <script src="js/tablahash.js"></script>  
+
+    <script>
+          function leerArchivo(e) {
+            var archivo = e.target.files[0];
+            if (!archivo) {
+              return;
+            }
+            var lector = new FileReader();
+            lector.onload = function(e) {
+              var contenido = e.target.result;
+              mostrarContenido(contenido);
+            };
+            lector.readAsText(archivo);
+          }
+          
+          function mostrarContenido(contenido) {
+            var elemento = document.getElementById('masiva');
+            const jsonString = JSON.stringify(contenido);
+            localStorage.setItem('claveAVL', jsonString);
+            elemento.innerHTML = contenido;
+          }
+          
+          document.getElementById('archivo_entrada').addEventListener('change', leerArchivo, false);
+          arbol_avl = new avl();
+        function carga_masiva_inOrden(){
+          texto = document.getElementById("masiva").value;
+            let Archivojson = JSON.parse(texto);
+            let elemento = Archivojson.alumnos;
+            var count = 0;
+            for (x in elemento){
+              arbol_avl.insertar(elemento[count].carnet, elemento[count].nombre, elemento[count].password, elemento[count].Carpeta_Raiz);
+              count++;
+            }
+            let orden_tabla = arbol_avl.inOrden(arbol_avl.raiz);
+            console.log(orden_tabla);
+            for(let i = 0; i < orden_tabla.length; i++){
+              if (orden_tabla[i] == undefined){
+                console.log("vacio");
+              }
+                else{
+                    var tabla = document.getElementById("miTabla");
+                    var fila = tabla.insertRow();
+                    var carnet_celda = fila.insertCell();
+                    var nombre_celda = fila.insertCell();
+                    carnet_celda.innerHTML = orden_tabla[i].carnet;
+                    nombre_celda.innerHTML = orden_tabla[i].nombre;
+                }
+            }
+            url = "https://dreampuf.github.io/GraphvizOnline/#"+arbol_avl.generarDot();
+            url = url.replace(/(\r\n|\n|\r)/gm, " ");
+            iframe__ = "<iframe id='graph' src='"+url+"' height='700px' style='width: 100%''></iframe>"
+            document.getElementById("graficas").innerHTML = iframe__;
+            iframe__ = "<iframe id='tabla' src='"+tabla.html+"' height='700px' style='width: 100%''></iframe>"
+        }
+        
+        function carga_masiva_postOrden(){
+          texto = document.getElementById("masiva").value;
+            let Archivojson = JSON.parse(texto);
+            let elemento = Archivojson.alumnos;
+            var count = 0;
+            for (x in elemento){
+              arbol_avl.insertar(elemento[count].carnet, elemento[count].nombre, elemento[count].password, elemento[count].Carpeta_Raiz);
+              count++;
+            }
+            let orden_tabla = arbol_avl.postOrden(arbol_avl.raiz);
+            console.log(orden_tabla);
+            var tabla = document.getElementById("miTabla");
+            for(let i = 0; i < orden_tabla.length; i++){
+              if (orden_tabla[i] == undefined){
+                console.log("vacio");
+              }
+                else{
+                    var fila = tabla.insertRow();
+                    var carnet_celda = fila.insertCell();
+                    var nombre_celda = fila.insertCell();
+                    carnet_celda.innerHTML = orden_tabla[i].carnet;
+                    nombre_celda.innerHTML = orden_tabla[i].nombre;
+                    console.log("carnet: "+orden_tabla[i].carnet+" nombre: "+orden_tabla[i].nombre);
+                }
+            }
+            //console.log(arbol_avl.postOrden(arbol_avl.raiz));
+            //console.log(arbol_avl.generarDot())
+            url = "https://dreampuf.github.io/GraphvizOnline/#"+arbol_avl.generarDot();
+            url = url.replace(/(\r\n|\n|\r)/gm, " ");
+            iframe__ = "<iframe id='graph' src='"+url+"' height='700px' style='width: 100%''></iframe>"
+            document.getElementById("graficas").innerHTML = iframe__;
+            iframe__ = "<iframe id='tabla' src='"+tabla.html+"' height='700px' style='width: 100%''></iframe>"
+        }
+        function carga_masiva_preorden(){
+          texto = document.getElementById("masiva").value;
+            let Archivojson = JSON.parse(texto);
+            let elemento = Archivojson.alumnos;
+            var count = 0;
+            for (x in elemento){
+              arbol_avl.insertar(elemento[count].carnet, elemento[count].nombre, elemento[count].password, elemento[count].Carpeta_Raiz);
+              count++;
+            }
+            let orden_tabla = arbol_avl.preorden(arbol_avl.raiz);
+            console.log(orden_tabla);
+            var tabla = document.getElementById("miTabla");
+            for(let i = 0; i < orden_tabla.length; i++){
+            if (orden_tabla[i].carnet == undefined && orden_tabla[i].nombre == undefined) {
+                console.log("vacio");
+            }
+                else{
+                    var fila = tabla.insertRow();
+                    var carnet_celda = fila.insertCell();
+                    var nombre_celda = fila.insertCell();
+                    carnet_celda.innerHTML = orden_tabla[i].carnet;
+                    nombre_celda.innerHTML = orden_tabla[i].nombre;
+                }
+            }
+            //console.log(arbol_avl.preorden(arbol_avl.raiz));
+            //console.log(arbol_avl.generarDot())
+            url = "https://dreampuf.github.io/GraphvizOnline/#"+arbol_avl.generarDot();
+            url = url.replace(/(\r\n|\n|\r)/gm, " ");
+            iframe__ = "<iframe id='graph' src='"+url+"' height='700px' style='width: 100%''></iframe>"
+            document.getElementById("graficas").innerHTML = iframe__;
+            iframe__ = "<iframe id='tabla' src='"+tabla.html+"' height='700px' style='width: 100%''></iframe>"
+        }
+    </script>
+    <script>
+class nodoHash{
+    constructor(carnet, usuario, password){
+        this.carnet = carnet
+        this.usuario = usuario
+        this.password = password
+    }
+}
+
+class TablaHash{
+    constructor(){
+        this.tabla = new Array(7)
+        this.capacidad = 7
+        this.utilizacion = 0
+    }
+
+    insertar(carnet, usuario, password){
+        let indice = this.calculoIndice(carnet)
+        const nuevoNodo = new nodoHash(carnet, usuario, password)
+        if(indice < this.capacidad){
+            try{
+                if(this.tabla[indice] == null){
+                    console.log("Entre")
+                    this.tabla[indice] = nuevoNodo
+                    this.utilizacion++
+                    this.capacidad_tabla()
+                }else{
+                    let contador = 1
+                    indice = this.RecalculoIndice(carnet,contador)
+                    while(this.tabla[indice] != null){
+                        contador++
+                        indice = this.RecalculoIndice(carnet, contador)
+                    }
+                    this.tabla[indice] = nuevoNodo
+                    this.utilizacion++
+                    this.capacidad_tabla()
+                }
+            }catch(err){
+                console.log("Hubo un error en insercion")
+            }
+        }
+    }
+
+    calculoIndice(carnet){ 
+        let carnet_cadena = carnet.toString()
+        let divisor = 0
+        for(let i = 0; i < carnet_cadena.length; i++){
+            divisor = divisor + carnet_cadena.charCodeAt(i)
+        }
+        let indice_final = divisor % this.capacidad
+        return indice_final
+    }
+
+    capacidad_tabla(){
+        let aux_utilizacion = this.capacidad*0.75
+        if(this.utilizacion > aux_utilizacion){
+            this.capacidad = this.nueva_capacidad()
+            this.utilizacion = 0
+            this.ReInsertar()
+        } 
+    }
+
+    nueva_capacidad(){ //Sustituir por un algoritmo del siguiente numero primo
+        let numero = this.capacidad + 1;
+        while (!this.isPrime(numero)) {
+            numero++;
+        }
+        return numero;
+    }
+
+    ReInsertar(){
+        const auxiliar_tabla = this.tabla
+        this.tabla = new Array(this.capacidad)
+        auxiliar_tabla.forEach((alumno) => {
+            this.insertar(alumno.carnet, alumno.usuario, alumno.password)
+        })
+    }
+
+    RecalculoIndice(carnet, intento){
+        let nuevo_indice = this.calculoIndice(carnet) + intento*intento
+        let nuevo = this.nuevo_Indice(nuevo_indice)
+        return nuevo
+    }
+
+    nuevo_Indice(numero){
+        let nueva_posicion = 0
+        if(numero < this.capacidad){
+            nueva_posicion = numero
+        }else{
+            nueva_posicion = numero - this.capacidad
+            nueva_posicion = this.nuevo_Indice(nueva_posicion)
+        }
+        return nueva_posicion
+    }
+
+    busquedaUsuario(carnet){
+        let indice = this.calculoIndice(carnet)
+        if(indice < this.capacidad){
+            try{
+                if(this.tabla[indice] == null){
+                    alert("No se encontro el alumno")
+                }else if(this.tabla[indice] != null && this.tabla[indice].carnet == carnet){
+                    alert("Bienvenido " + this.tabla[indice].usuario)
+                }else{
+                    let contador = 1
+                    indice = this.RecalculoIndice(carnet,contador)
+                    while(this.tabla[indice] != null){
+                        if(this.tabla[indice].carnet == carnet){
+                            alert("Bienvenido " + this.tabla[indice].usuario)
+                            return
+                        }
+                        contador++
+                        indice = this.RecalculoIndice(carnet, contador)
+                    }
+                }
+            }catch(err){
+                console.log("Hubo un error en busqueda")
+            }
+        }
+    }
+
+    /**
+     * Este codigo es un extra para generar una tabla 
+     */
+
+     genera_tabla() {
+    // Obtener la referencia del elemento div con id "tabla_hash"
+    var divTablaHash = document.getElementById("tabla_hash");
+
+    // Crea un elemento <table> y un elemento <tbody>
+    var divtable = document.createElement("div");
+    var tabla   = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+    var salto_html = document.createElement("br")
+    divtable.className = "container"
+    tabla.className = "table"
+    //carnet
+    var encabezado = document.createElement("tr")
+    var celda_encabezado = document.createElement("td");
+    var encabezado_contenido = document.createTextNode("Carnet")
+    celda_encabezado.appendChild(encabezado_contenido);
+    encabezado.appendChild(celda_encabezado)
+    tblBody.appendChild(encabezado)
+    //Nombre
+    celda_encabezado = document.createElement("td");
+    encabezado_contenido = document.createTextNode("Nombre")
+    celda_encabezado.appendChild(encabezado_contenido);
+    encabezado.appendChild(celda_encabezado)
+    tblBody.appendChild(encabezado)
+    //Password
+    celda_encabezado = document.createElement("td");
+    encabezado_contenido = document.createTextNode("Password")
+    celda_encabezado.appendChild(encabezado_contenido);
+    encabezado.appendChild(celda_encabezado)
+    tblBody.appendChild(encabezado)
+
+    for(var i = 0; i < this.capacidad; i++){
+        if(this.tabla[i] != null){
+            var hilera = document.createElement("tr");
+            var arreglo = new Array(3)
+            arreglo[0] = this.tabla[i].carnet
+            arreglo[1] = this.tabla[i].usuario
+            arreglo[2] = this.tabla[i].password
+            for(var j = 0; j < 3; j++){
+                var celda = document.createElement("td");
+                var textoCelda = document.createTextNode(arreglo[j]);
+                celda.appendChild(textoCelda);
+                hilera.appendChild(celda);
+            }
+            tblBody.appendChild(hilera);
+        }
+    }
+
+    divtable.appendChild(tabla)
+    // posiciona el <tbody> debajo del elemento <table>
+    tabla.appendChild(tblBody);
+    // appends <table> into div "tabla_hash"
+    divTablaHash.appendChild(salto_html);
+    divTablaHash.appendChild(divtable);
+    // modifica el atributo "border" de la tabla y lo fija a "2";
+    tabla.setAttribute("border", "2");
+}
+
+
+
+
+    isPrime(numero) {
+        if (numero <= 1) {return false}
+        if (numero === 2) {return true}
+        if (numero % 2 === 0) {return false}
+        for (let i = 3; i <= Math.sqrt(numero); i += 2) {
+            if (numero % i === 0) {return false};
+        }
+        return true;
+    }
+
+}
+
+const tablaHash = new TablaHash()
+
+const inputElement = document.getElementById("input");
+inputElement.addEventListener("change", onChange, false);
+function onChange(event) {
+    var reader = new FileReader();
+    reader.onload = onReaderLoad;
+    reader.readAsText(event.target.files[0]);
+}
+
+function onReaderLoad(event){
+    var obj = JSON.parse(event.target.result);
+    for(var i = 0; i < obj.alumnos.length; i++){
+        tablaHash.insertar(obj.alumnos[i].carnet, obj.alumnos[i].nombre, obj.alumnos[i].password)
+    }
+    console.log(tablaHash.tabla)
+    tablaHash.genera_tabla()
+}
+
+function busqueda(){
+    let carnet = document.getElementById("valor").value;
+    tablaHash.busquedaUsuario(carnet)
+}
+
+    </script>
+</body>
+
+</html>

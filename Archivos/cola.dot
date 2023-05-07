@@ -1,0 +1,10 @@
+digraph cola{
+rankdir=LR;
+node[shape = record];
+nodonull2[label="null"];
+nodo0[label="{Carlos|}"];
+nodo0->nodonull2;
+}ndro|}"];
+nodo0->nodo1;
+nodo1->nodonull2;
+}

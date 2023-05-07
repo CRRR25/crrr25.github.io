@@ -1,0 +1,22 @@
+digraph G {
+	rankdir=LR;
+	node [shape=record];
+	graph [splines=ortho];
+	subgraph cluster_0 {
+		style=filled;
+		color=crimson;
+		node [style=filled,color=aquamarine1];
+		label = "Lista de Estudiantes";
+		9112246 [label="<f0> |<f1> 9112246|Carlos Rangel |<f2> "];
+	}
+}	201780044 [label="<f0> |<f1> 201780044|Leonardo Martinez |<f2> "];
+		201403877 [label="<f0> |<f1> 201403877|Ebany Larios |<f2> "];
+		9112246 [label="<f0> |<f1> 9112246|Carlos Rangel |<f2> "];
+	}
+	201700918:f2 -> 201780044:f0;
+	201780044:f2 -> 201403877:f0;
+	201403877:f2 -> 9112246:f0;
+	201780044:f0 -> 201700918:f2;
+	201403877:f0 -> 201780044:f2;
+	9112246:f0 -> 201403877:f2;
+}
